@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "LinkedIn Connections Scraper",
+    "version": "1.0.0",
+    "action": { "default_popup": "index.html" },
+    "background": {
+        "service_worker": "background.ts",
+        "type": "module"
+    },
+    "permissions": [
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://www.linkedin.com/*"
+    ]
+}
