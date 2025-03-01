@@ -4,13 +4,20 @@
     "version": "1.0.0",
     "action": { "default_popup": "index.html" },
     "background": {
-        "service_worker": "background.ts",
+        "service_worker": "src/background.ts",
         "type": "module"
     },
     "permissions": [
-        "scripting"
+        "storage",
+        "cookies"
     ],
     "host_permissions": [
-        "https://www.linkedin.com/*"
+        "https://*.www.linkedin.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://www.linkedin.com/*"],
+            "js": ["src/content.tsx"]
+        }
     ]
 }
